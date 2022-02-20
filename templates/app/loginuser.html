@@ -1,0 +1,25 @@
+{% extends 'app/base.html' %}
+
+
+{% block title %}
+
+    Login user
+
+{% endblock %}
+
+
+{% block loginuser %}
+    {% if messages %}
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+
+
+    {% endif %}
+    <form class="form" action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">submit</button>
+    </form>
+
+{% endblock %}
